@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/vendor/css/validationEngine.jquery.css">
+</head>
+<body>
+    <div class="container p=2 my-2">
+        <div class="card">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4 col-lg-offset-4" style="margin-top: 10%;">
+                <form id="register" method="post" action="save.php">
+                    <h1>REGISTERATION</h1>
+                    <div class="form-group">
+                        <lable>username</lable>
+                        <input type="text" id="username" name="username" class="form-control validate[required]">
+                    </div>
+                    <div class="form-group">
+                        <label>email</label>
+                        <input type="text" id="email" name="email" class="form-control validate[required,custom[email]]">
+                    </div>
+                    <div class="form-group">
+                        <label>password</label>
+                        <input type="password" id="password" name="password" class="form-control validate[required]">
+                    </div>
+                    <div class="form-group">
+                        <label>confirm_password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control validate[required]">
+                    </div>
+                    <div class="form-group">
+                        <label>phone_no</label>
+                        <input type="text" id="phone_no" name="phone_no" class="form-control validate[required,minSize[10]]">
+                    </div>
+                    <div class="form-group">
+                        <label>city</label>
+                        <select id="city" name="city" class="form-control custom custom-select">
+                            <option selected="select city">select city</option>
+                                <option value="chennai">chennai</option>
+                                <option value="coimbatore">coimbatore</option>
+                                <option value="trichy">trichy</option>
+                                <option value="pudukottai">pudukottai</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>status</label>
+                        <select id="status" name="status" class="form-control custom custom-select">
+                            <option selected="select status">select status</option>
+                            <option value="active">active</option>
+                            <option value="inactive">inactive</option>
+                          </select>
+                      </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="sign-up">
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="asset/js/jquery.3.5.1.min.js"></script>
+    <script src="asset/vendor/js/languages/jquery.validationEngine-en.js"></script>
+    <script src="asset/vendor/js/jquery.validationEngine.js"></script>
+    <script>
+        $(function(){
+            $("#register").validationEngine();
+        }
+
+        )
+    </script>
+</body>
+</html>
